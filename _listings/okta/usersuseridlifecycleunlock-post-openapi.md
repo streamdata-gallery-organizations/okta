@@ -3,8 +3,8 @@ swagger: "2.0"
 x-collection-name: Okta
 x-complete: 0
 info:
-  title: Okta Clear User Sessions
-  description: Clear user sessions.
+  title: Okta Unlock User
+  description: Unlock user.
   version: 1.0.0
 host: example.com
 basePath: /api/v1
@@ -272,6 +272,137 @@ paths:
       - Clear
       - User
       - Sessions
+  /users/{userId}/appLinks:
+    get:
+      summary: Get Assigned App Links
+      description: Get assigned app links.
+      operationId: getUsersUserApplinks
+      x-api-path-slug: usersuseridapplinks-get
+      parameters:
+      - in: header
+        name: Accept
+      - in: header
+        name: Content-Type
+      - in: path
+        name: userId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Assigned
+      - App
+      - Links
+  /users/{userId}/lifecycle/unsuspend:
+    post:
+      summary: Unsuspend User
+      description: Unsuspend user.
+      operationId: postUsersUserLifecycleUnsuspend
+      x-api-path-slug: usersuseridlifecycleunsuspend-post
+      parameters:
+      - in: header
+        name: Accept
+      - in: header
+        name: Content-Type
+      - in: path
+        name: userId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Unsuspend
+      - User
+  /users/{userId}/lifecycle/expire_password:
+    post:
+      summary: Expire Password
+      description: Expire password.
+      operationId: postUsersUserLifecycleExpirePassword
+      x-api-path-slug: usersuseridlifecycleexpire-password-post
+      parameters:
+      - in: header
+        name: Accept
+      - in: header
+        name: Content-Type
+      - in: path
+        name: userId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Expire
+      - Password
+  /users/{userId}/groups:
+    get:
+      summary: Get Groups for User
+      description: Get groups for user.
+      operationId: getUsersUserGroups
+      x-api-path-slug: usersuseridgroups-get
+      parameters:
+      - in: header
+        name: Accept
+      - in: header
+        name: Content-Type
+      - in: path
+        name: userId
+      responses:
+        200:
+          description: OK
+      tags:
+      - GroupsUser
+  /users/me:
+    get:
+      summary: Get Current User
+      description: Get current user.
+      operationId: getUsersMe
+      x-api-path-slug: usersme-get
+      parameters:
+      - in: header
+        name: Accept
+      - in: header
+        name: Content-Type
+      responses:
+        200:
+          description: OK
+      tags:
+      - Current
+      - User
+  /users/{userId}/lifecycle/deactivate:
+    post:
+      summary: Deactivate User
+      description: Deactivate user.
+      operationId: postUsersUserLifecycleDeactivate
+      x-api-path-slug: usersuseridlifecycledeactivate-post
+      parameters:
+      - in: header
+        name: Accept
+      - in: header
+        name: Content-Type
+      - in: path
+        name: userId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Deactivate
+      - User
+  /users/{userId}/lifecycle/unlock:
+    post:
+      summary: Unlock User
+      description: Unlock user.
+      operationId: postUsersUserLifecycleUnlock
+      x-api-path-slug: usersuseridlifecycleunlock-post
+      parameters:
+      - in: header
+        name: Accept
+      - in: header
+        name: Content-Type
+      - in: path
+        name: userId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Unlock
+      - User
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

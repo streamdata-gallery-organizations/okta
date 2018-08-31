@@ -3,8 +3,8 @@ swagger: "2.0"
 x-collection-name: Okta
 x-complete: 0
 info:
-  title: Okta Clear User Sessions
-  description: Clear user sessions.
+  title: Okta Change Password
+  description: Change password.
   version: 1.0.0
 host: example.com
 basePath: /api/v1
@@ -186,92 +186,6 @@ paths:
       tags:
       - Change
       - Password
-  /users/{userId}/lifecycle/reset_password:
-    post:
-      summary: Reset Password
-      description: Reset password.
-      operationId: postUsersUserLifecycleResetPassword
-      x-api-path-slug: usersuseridlifecyclereset-password-post
-      parameters:
-      - in: header
-        name: Accept
-      - in: header
-        name: Content-Type
-      - in: query
-        name: sendEmail
-      - in: path
-        name: userId
-      responses:
-        200:
-          description: OK
-      tags:
-      - Reset
-      - Password
-  /users/{userId}/credentials/change_recovery_question:
-    post:
-      summary: Change Recovery Question
-      description: Change recovery question.
-      operationId: postUsersUserCredentialsChangeRecoveryQuestion
-      x-api-path-slug: usersuseridcredentialschange-recovery-question-post
-      parameters:
-      - in: header
-        name: Accept
-      - in: body
-        name: Body
-        schema:
-          $ref: '#/definitions/holder'
-      - in: header
-        name: Content-Type
-      - in: path
-        name: userId
-      responses:
-        200:
-          description: OK
-      tags:
-      - Change
-      - Recovery
-      - Question
-  /users/{userId}/lifecycle/activate:
-    post:
-      summary: Activate User
-      description: Activate user.
-      operationId: postUsersUserLifecycleActivate
-      x-api-path-slug: usersuseridlifecycleactivate-post
-      parameters:
-      - in: header
-        name: Accept
-      - in: header
-        name: Content-Type
-      - in: query
-        name: sendEmail
-      - in: path
-        name: userId
-      responses:
-        200:
-          description: OK
-      tags:
-      - Activate
-      - User
-  /users/{userId}/sessions:
-    delete:
-      summary: Clear User Sessions
-      description: Clear user sessions.
-      operationId: deleteUsersUserSessions
-      x-api-path-slug: usersuseridsessions-delete
-      parameters:
-      - in: header
-        name: Accept
-      - in: header
-        name: Content-Type
-      - in: path
-        name: userId
-      responses:
-        200:
-          description: OK
-      tags:
-      - Clear
-      - User
-      - Sessions
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

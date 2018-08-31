@@ -3,8 +3,8 @@ swagger: "2.0"
 x-collection-name: Okta
 x-complete: 0
 info:
-  title: Okta Suspend User
-  description: Suspend user.
+  title: Okta List Password Expired Users
+  description: List password expired users.
   version: 1.0.0
 host: example.com
 basePath: /api/v1
@@ -78,67 +78,6 @@ paths:
       - Password
       - Expired
       - Users
-    post:
-      summary: Create User without Credentials
-      description: Create user without credentials.
-      operationId: postUsers
-      x-api-path-slug: users-post
-      parameters:
-      - in: header
-        name: Accept
-      - in: query
-        name: activate
-      - in: body
-        name: Body
-        schema:
-          $ref: '#/definitions/holder'
-      - in: header
-        name: Content-Type
-      responses:
-        200:
-          description: OK
-      tags:
-      - User
-      - Without
-      - Credentials
-  /users/{userId}/lifecycle/reset_factors:
-    post:
-      summary: Reset Factors
-      description: Reset factors.
-      operationId: postUsersUserLifecycleResetFactors
-      x-api-path-slug: usersuseridlifecyclereset-factors-post
-      parameters:
-      - in: header
-        name: Accept
-      - in: header
-        name: Content-Type
-      - in: path
-        name: userId
-      responses:
-        200:
-          description: OK
-      tags:
-      - Reset
-      - Factors
-  /users/{userId}/lifecycle/suspend:
-    post:
-      summary: Suspend User
-      description: Suspend user.
-      operationId: postUsersUserLifecycleSuspend
-      x-api-path-slug: usersuseridlifecyclesuspend-post
-      parameters:
-      - in: header
-        name: Accept
-      - in: header
-        name: Content-Type
-      - in: path
-        name: userId
-      responses:
-        200:
-          description: OK
-      tags:
-      - Suspend
-      - User
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
